@@ -1,8 +1,19 @@
+/* CSS variables */
+
+:root{
+    --main-color: #00ff00;
+    --blue-color: 	#1e90ff;
+    --white-color: #fff;
+    --black-color: #000;
+    --red-color: #bd3333;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Kumbh Sans", sans-serif;
+    
 }
 
 .navbar{
@@ -15,6 +26,10 @@
     position: sticky;
     top: 0;
     z-index: 999;
+}
+.scroll {
+    width: 30px;
+    margin-top: 2em;
 }
 
 .navbar__container {
@@ -29,8 +44,7 @@
 }
 
 #navbar__logo {
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%,#ffb199 100%);
+    background-color: var(--white-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
@@ -215,31 +229,39 @@
     background-color: #141414;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1850px;
     padding: 0 50px;
 }
 
 
 .main__content h1 {
     font-size: 4rem;
-    background-color: #ff8177;
-    background-image:linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    color: var(--white-color);
+    /* background-image: var(--white-color); */
     background-size: 100%;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    -moz-text-fill-color: transparent; */
 }
 
 .main__content h2{
     font-size: 4rem;
-    background-color: #ff8177;
-    background-image:linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    color:var(--white-color);
+    /* background-image:var(--white-color); */
     background-size: 100%;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    -moz-text-fill-color: transparent; */
+}
+
+.love {
+    color:var(--red-color);
+    /* -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent; */
 }
 
 .main__content p{
@@ -386,11 +408,11 @@
 
 .services__card{
     margin: 1rem;
-    height: 525px;
-    width: 400px;
+    height: 600px;
+    width: 600px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,
-     rgba(17,17,17,0.6) 100%), url('/images/pic3.jpg');
+     rgba(17,17,17,0.6) 100%), url('/images/breakout1.PNG');
      background-size: cover;
      position: relative;
      color: #fff;
@@ -398,11 +420,11 @@
 
 .services__card:nth-child(2){
     margin: 1rem;
-    height: 525px;
-    width: 400px;
+    height: 600;
+    width: 600px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,
-     rgba(17,17,17,0.6) 100%), url('/images/pic2.jpg');
+     rgba(17,17,17,0.6) 100%), url('/images/galaga.PNG');
 }
 
 .services h2 {
@@ -589,9 +611,90 @@
 }
 
 @media screen and (max-width: 480px) {
-    ¨.footer__link--items {
+    .footer__link--items {
         margin: 0;
         padding: 10px;
         width: 100%;
     }
+}
+
+.circle {
+    animation: circleAnim 1s infinite alternate-reverse;
+}
+
+@keyframes circleAnim {
+    from {
+        transform: translate(262px, 798px);
+        z-index: 5;
+    }
+    to {
+        transform: translate(262px, 830px);
+    }
+}
+
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+
+.tilt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: tilting 10s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+section span {
+  transition: font-weight 0.4s ease-in;
+  animation: floating-secondary 2.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+section span:nth-child(1) {
+  animation-delay: 1s;
+}
+
+section span:hover {
+  font-weight: 100;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 5vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floating-secondary {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 1vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes tilting {
+  0% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
 }
